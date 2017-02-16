@@ -1,0 +1,85 @@
+// Rem output with px fallback
+@mixin font-size($sizeValue: $font__size_base) {
+	font-size: ($sizeValue * 16) * 1px;
+	font-size: $sizeValue * 1rem;
+}
+
+//takes a standard base font size and scales it, returning sizes
+@mixin font-size-adjust($sizeValue, $scale){
+  
+  font-size: (($sizeValue * $scale) * 16) * 1px;
+  font-size: (($sizeValue * $scale) * 1) * 1rem;
+  
+}
+
+@mixin box-shadow(){
+  -webkit-box-shadow: 0px 4px 15px rgba(51, 51, 51, 0.3);
+  -moz-box-shadow: 0px 4px 15px rgba(51, 51, 51, 0.3);
+  box-shadow: 0px 4px 15px rgba(51, 51, 51, 0.3);
+}
+@mixin box-shadow-big(){
+  -webkit-box-shadow: 0px 7px 15px 0px rgba(51, 51, 51, 0.5);
+  -moz-box-shadow: 0px 7px 15px 0px rgba(51, 51, 51, 0.5);
+  box-shadow: 0px 7px 15px 0px rgba(51, 51, 51, 0.5);
+}
+
+// Center block
+@mixin center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// Clearfix
+@mixin clearfix() {
+	content: "";
+	display: table;
+	table-layout: fixed;
+}
+
+// Clear after (not all clearfix need this also)
+@mixin clearfix-after() {
+	clear: both;
+}
+
+
+//Responsive breakpoints map
+
+//outputs styles for a specific breakpoint
+@mixin breakpoint($breakpoint-name){
+  
+  //check if we have this key
+  @if map-has-key($breakpoint-map, $breakpoint-name){
+    //go through all breakpoints we have
+    @each $breakpoint-key, $breakpoint-value in $breakpoint-map{
+      
+      //display only for this size
+      @if $breakpoint-name == $breakpoint-key{
+         @media all and (min-width: map-get($breakpoint-value, 'min-width')){
+          //display content
+          @content;
+        }
+      }
+    }
+  }
+  
+}
+
+//Output styles that only work up to a set breakpoint (not including it)
+@mixin upto-breakpoint($breakpoint-name){
+  
+  //check if breakpoint exists
+  @if map-has-key($breakpoint-map, $breakpoint-name){
+    //go through all breakpoints
+    @each $breakpoint-key, $breakpoint-value in $breakpoint-map{
+      //execute only for our required breakpoint
+      @if $breakpoint-name == $breakpoint-key{
+        
+        @media all and (max-width: map-get($breakpoint-value, 'min-width')){
+          @content;
+        }
+      }
+    }
+  }
+  
+}

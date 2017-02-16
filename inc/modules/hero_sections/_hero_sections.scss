@@ -1,0 +1,42 @@
+/*
+ * Hero Section
+ */
+
+.hero-section{
+ 
+  
+  .inner-wrapper{
+     border-radius: 20px;
+  }
+  
+  .text-wrap{
+    color: inherit;
+    vertical-align: middle;
+    
+    .button{
+      display: block;
+    }
+  }
+  
+  .image-wrap{
+    
+    img{
+      height: 125px;
+      width: auto;
+      display: inline-block;
+    }
+    vertical-align: middle;
+  }
+  
+  //medium and above styling
+  @include breakpoint("medium"){
+    .text-wrap{
+      
+      .button{
+        display: inline-block;
+      }
+      
+    }
+  }
+
+}

@@ -1,0 +1,106 @@
+//All Headers
+h1,.h1,h2,.h2,h3,.h3, h4,.h4, h5,.h5, h6,.h6 {
+  clear: both;
+  font-weight: 400;
+  line-height: 1.25em;
+  color: $color__slate;
+  
+  &.inline{
+    clear: none;
+  }
+  
+  &.fat{
+    font-weight: 500;
+  }	
+  
+  //a tags inside headers
+  & a,
+  & a:visited,
+  & a:active{
+    color: inherit;
+  }
+}
+
+$font-size-large: 1.25;
+$font-size-small: 0.75;
+
+h1, .h1{
+  $font-size: $font__size_base * 2.0;
+  @include font-size( $font-size );
+
+  &.big{
+     @include font-size-adjust($font-size, $font-size-large);
+  }
+  &.small{
+     @include font-size-adjust($font-size, $font-size-small);
+  }
+  
+  //TODO: Come back to this later, need to make dynamic font sizes
+  // @include breakpoint("medium"){
+    // &.big{
+      // border: solid 1px green;
+      // @include font-size-adjust($font-size, ($font-size-large / 2));
+    // }
+    // &.small{
+      // @include font-size-adjust($font-size, ($font-size-small / 2));
+      // border: solid 1px green;
+    // }
+  // }
+}
+
+h2, .h2{
+  $font-size: $font__size_base * 1.55;
+  @include font-size( $font-size );
+  
+  &.big{
+     @include font-size-adjust($font-size, $font-size-large);
+  }
+  &.small{
+     @include font-size-adjust($font-size, $font-size-small);
+  }
+}
+h3, .h3{
+  $font-size: $font__size_base * 1.2;
+  @include font-size( $font-size );
+
+  &.big{
+     @include font-size-adjust($font-size, $font-size-large);
+  }
+  &.small{
+     @include font-size-adjust($font-size, $font-size-small);
+  }
+}
+h4, .h4{
+  $font-size: $font__size_base * 1.05;
+  @include font-size( $font-size );
+
+  &.big{
+     @include font-size-adjust($font-size, $font-size-large);
+  }
+  &.small{
+     @include font-size-adjust($font-size, $font-size-small);
+  }
+}
+h5, .h5{
+  $font-size: $font__size_base * 1.0;
+  @include font-size( $font-size );
+ 
+  &.big{
+     @include font-size-adjust($font-size, $font-size-large);
+  }
+  &.small{
+     @include font-size-adjust($font-size, $font-size-small);
+  }
+}
+h6, .h6{
+  $font-size: $font__size_base * 1.0;
+  @include font-size( $font-size );
+  
+  &.big{
+     @include font-size-adjust($font-size, $font-size-large);
+  }
+  &.small{
+     @include font-size-adjust($font-size, $font-size-small);
+  }
+}
+

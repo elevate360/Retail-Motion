@@ -1,0 +1,72 @@
+/*!
+Theme Name: Retail Motion
+Theme URI: https://www.elevate360.com.au
+Author: Simon Codrington
+Author URI: https://www.elevate360.com.au
+Description: A custom mobile first, responsive website for Retail Motion. 
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: retail-motion
+
+
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+ADD this later maybe
+--------------------------------------------------------------*/
+@import "variables-site/variables-site";
+@import "mixins/mixins-master";
+
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+@import "normalize";
+
+/*--------------------------------------------------------------
+# Universal
+--------------------------------------------------------------*/
+@import "universal/universal";
+@import "universal/animations";
+
+/*--------------------------------------------------------------
+# Grid (Responsive and universal site layouts)
+--------------------------------------------------------------*/
+@import "grid/grid";
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+@import "typography/typography";
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+@import "elements/elements";
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+@import "forms/forms";
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+@import "navigation/navigation";
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+@import "media/media";
+
+/*--------------------------------------------------------------
+# Site (Primary and Secondary content)
+--------------------------------------------------------------*/
+@import "site/site";
+
+/*--------------------------------------------------------------
+# Theme Modules (all theme components)
+--------------------------------------------------------------*/
+@import "../inc/modules/module_stylesheet"
+

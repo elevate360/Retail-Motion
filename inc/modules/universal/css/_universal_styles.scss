@@ -1,0 +1,176 @@
+/*
+ * Universal styles
+ * Styling for elements that are shared across modules. Universal elements
+ */
+
+
+.flexslider{
+  float: left;
+  width: 100%;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  border-radius: 0px;
+  
+  //without this the 'slide' variant flows outside container
+  .flex-viewport{
+    overflow: hidden!important;  
+  }
+  
+  .flex-control-nav{
+    padding: 0px 25%;
+    
+    li{
+      margin: 0px 5px;
+      
+      a{
+        background: $color__light_blue;
+        width: 20px;
+        height: 20px;
+        opacity: 1;
+        box-shadow: none;
+        transition: all 300ms linear;
+        transform: scale(1.0);
+      }
+      a.flex-active{
+        background: $color__slate;
+        transform: scale(1.15);
+      }
+    }
+    
+  }
+  
+  .flex-direction-nav{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    
+    a{
+      opacity: 1;
+      text-align: center;
+      line-height: 40px;
+      margin: 0px;
+      text-shadow: none;
+      background: $color__light_blue;
+      color: $color__white;
+      top: 100%;
+      top: calc(100% + 10px);
+      
+    }
+    a.flex-next{
+      right: 15px;
+      
+    }
+    a.flex-prev{
+      left: 15px;
+    }
+    //icons
+    a:before{
+      font-family: FontAwesome;
+      color: inherit;
+      text-shadow: none;
+      font-size: 2em;
+    }
+    a.flex-next:before{
+      content: '\f105';
+    }
+    a.flex-prev:before{
+      content: '\f104';
+    }
+    
+  }
+  
+  //Hover states / interactivity
+  &:focus,
+  &:hover{
+    .flex-direction-nav{
+    
+      a.flex-next,
+      a.flex-prev{
+        opacity: 1;
+        background: $color__slate;
+      }
+      
+      a.flex-prev{
+        left: 15px;
+      }
+      a.flex-next{
+        right: 15px;
+      }
+    }
+    
+  }
+  
+
+  //medium profile
+  @include breakpoint("large"){
+    
+    //pagination controls
+    .flex-control-nav{
+      
+      li{
+        
+        a{
+          height: 15px;
+          width: 15px;
+        }
+        
+      }
+      
+    }
+    
+    //next / prev controls
+    .flex-direction-nav{
+      
+      position: initial;
+      bottom: auto;
+
+    }
+    
+  }
+  
+}
+
+
+//Pagination controls (next / prev) for single posts
+.post-navigation{
+  
+  .nav-links{
+    float: left;
+    width: 100%;
+  }
+  
+  .nav-previous,
+  .nav-next{
+    
+    a{
+      color: $color__slate;
+    }
+    .control{
+      font-weight: 600;
+      margin: 0px 0px 10px 0px;
+    }
+    
+    .title{
+      
+    }
+    .icon{
+      color: $color__orange;
+    }
+    
+  }
+  
+  .nav-previous{
+    .icon{
+      margin-right: 10px;
+    }
+  }
+  
+  .nav-next{
+    .icon{
+      margin-left: 10px;
+    }
+  }
+  
+  
+}

@@ -1,0 +1,34 @@
+/*
+ * Footer Styling
+ */
+
+
+.site-footer{
+  background-color: $color__slate;
+  color: $color__white;
+  
+  a{
+    color: $color__white;
+  }
+  
+  //widgets in footer
+  .widget{
+    box-shadow: none;
+    padding: 0px;
+    
+    .widget-title{
+      color: $color__white;
+    }
+    
+  }
+  
+  ul{
+    margin-left: 0px;
+    padding-left: 15px;
+    
+    ul{
+      margin-left: 15px;
+    }
+  }
+  
+}

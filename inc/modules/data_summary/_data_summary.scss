@@ -1,0 +1,92 @@
+
+
+.data-summary{
+  
+  //header section
+  .summary-header{
+    
+  }
+  
+  //primary content
+  .summary-content{
+    position: relative;
+    
+    //all fragments      
+    .fragments{
+      position: relative;
+    }
+    
+    //when fragment is active
+    .fragment.active .value{
+      transform: translate3d(0px, 0px, 1px);
+      opacity: 1;
+    }
+    .fragment.active .content{
+      transform: translate3d(0px, 0px, 1px);
+      opacity: 1;
+    }
+    
+    //e.g 50%
+    .value{
+        $font-size: $font__size_base * 2.25;
+        @include font-size-adjust($font-size, 1.25);
+        font-weight: 700;
+        opacity: 0;
+        transition: opacity 800ms linear, transform 500ms ease-in;
+        transform: translate3d(0px, -25px, 1px);
+        position: relative;
+    }
+    //usually text 
+    .content{
+       $font-size: $font__size_base * 1.4;
+       @include font-size( $font-size );
+       opacity: 0;
+       transition: opacity 800ms linear, transform 600ms ease-out;
+       transform: translate3d(30px, 0px, 1px);
+       
+       //adjustments on medium
+       @include breakpoint("medium"){
+         margin-top: 10px;
+       }
+       
+       &.active{
+         transform: translate3d(0px, 0px, 1px);
+       }
+       
+    }
+    
+
+
+    
+    //shape
+    .shape{
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      height: 0px;
+      border-radius: 50%;
+      background: #febd55; 
+      z-index: -1;
+     
+      //medium 
+      @include breakpoint("medium"){
+        width: 70%;
+        padding-bottom: 70%;
+
+      }
+      
+      //large devices and above
+      @include breakpoint("large"){
+    
+        width: 40%;
+        padding-bottom: 40%;
+        left: 10%;
+      }
+      
+    }
+    
+   
+    
+  }
+  
+}

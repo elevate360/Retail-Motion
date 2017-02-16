@@ -1,0 +1,96 @@
+/*
+ * Testimonials styling
+ */
+
+
+.testimonial-slider{
+  
+  .testimonial{
+    background: $color__white;
+    
+    .left-quote .icon,
+    .right-quote .icon{
+      color: $color__light_blue;
+    }
+    
+    //left quote symbol (invert)
+    .left-quote,
+    .right-quote{
+    
+      .quote{
+        height: 50px;
+        padding-bottom: 100%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+       }
+      
+      
+      &.left-quote .quote{
+        background-image: url("inc/modules/testimonials/quote_marks_left.png");
+      }
+      &.right-quote .quote{
+        background-image: url("inc/modules/testimonials/quote_marks_right.png");
+      }
+      
+    
+    }
+   
+    
+    
+    //main content
+    .inner{
+      
+    }
+    
+    .background-image{
+      border-radius: 50%;
+    }
+    
+    .title{
+      
+    }
+    
+    .content{
+      
+    }
+    
+    .readmore{
+      
+    }
+    
+   
+    
+  }
+  
+  //medium
+   @include breakpoint("medium"){
+    
+    .testimonial{
+      
+      .left-quote .icon,
+      .right-quote .icon{
+        font-size: 4em;
+        color: $color__light_blue;
+      }
+
+    }
+    
+  }
+  
+  //medium and above breakpoints
+  @include breakpoint("large"){
+    
+    .testimonial{
+      
+      .left-quote .icon,
+      .right-quote .icon{
+        font-size: 7em;
+      }
+
+    }
+    
+  }
+  
+  
+}

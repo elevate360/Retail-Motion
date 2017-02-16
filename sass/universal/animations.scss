@@ -1,0 +1,31 @@
+/*
+ * Animations, used throghout the site
+ */
+
+@keyframes bounce-up-down{
+  0%{
+    transform: translate3d(0%, -15%, 1px);
+  }
+  50%{
+    transform: translate3d(0%, 20%, 1px);
+  }
+  100%{
+    transform: translate3d(0%, -15%, 1px);
+  }
+  
+}
+
+
+.animation-container{
+  opacity: 0;
+  transition: opacity 800ms linear, transform 500ms ease-in;
+  position: relative;
+  transform: translate3d(0%, 50px, 1px);
+  
+  &.active{
+    opacity: 1;
+    transform: translate3d(0%, 0%, 1px);
+  }
+  
+}
+

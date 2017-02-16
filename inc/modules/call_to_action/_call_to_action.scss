@@ -1,0 +1,145 @@
+/*
+ * Call to action
+ */
+
+
+.call-to-actions{
+  
+  
+  //each call to action element
+  .action{
+    position: relative;
+    
+    //full sized background image
+    &.layout_style_left .background-image{
+      background-position: top right;
+    }
+    &.layout_style_right .background-image{
+      background-position: top left;
+    }
+    &.layout_style_center .background-image{
+      background-position: top center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .background-image{
+      background-size: initial;
+      z-index: -1;
+      background-size: contain;
+    }
+    
+    //primary element
+    .primary{
+      position: relative;
+      z-index: 1;
+      
+      .title{
+        
+      }
+      .content{
+        
+      }
+      
+      .accent-line{
+        position: relative;
+        width: 100%;
+        height: 5px;
+        transition: all 300ms ease-out;
+      }
+      
+      
+    }
+    
+    //secondary (card) 
+    .secondary{
+      position: relative;
+      z-index: 2;
+      
+      .card{
+         @include box-shadow();
+         background: $color__white;
+      }
+
+      .image{
+        
+      }
+      
+      .title{
+        
+      }
+      .subtitle{
+        
+      }
+      .readmore{
+        padding: 7px;
+        color: $color__white;
+      }
+      
+    }
+    
+    //for larger profiles
+    @include breakpoint("medium"){
+      .primary{
+        
+        .accent-line{
+          width: 75%;
+        }
+      }
+      //left layout
+      &.layout_style_left{
+        
+        .primary{
+          text-align: left;
+        }
+        .accent-line{
+          left: 0%;
+        }
+        
+      }
+      
+      //center layout
+      &.layout_style_center{
+        
+        .primary{ 
+          text-align: center;
+        }
+        .accent-line{
+          width: 100%;
+        }
+        
+      }
+      
+      //right layout
+      &.layout_style_right{
+        
+        .primary{
+          text-align: right;
+        }
+        .accent-line{
+          left: -50%;
+        }
+        
+      }
+
+      
+    }
+    
+    //hover states for action
+    @include breakpoint("medium"){
+ 
+      //make the accent line wider
+      &:active.layout_style_right .primary .accent-line,
+      &:hover.layout_style_right .primary .accent-line,
+      &:active.layout_style_left .primary .accent-line,
+      &:hover.layout_style_left .primary .accent-line{
+        width: 150%;
+      }
+    
+    }
+    
+    
+  }
+
+  
+}

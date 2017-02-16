@@ -1,0 +1,88 @@
+//general styling
+ul, ol {
+	margin: 0 0 1.5em 3em;
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin: 0 1.5em 1.5em;
+}
+
+//styling for content area lists
+.entry-content{
+  
+  //ordered lists
+  ol{
+    list-style-type: none;
+    counter-reset: section;
+    margin: 0% 0% 1.5em 0%;
+    padding: 0%;
+    
+    li{
+      margin-bottom: 10px;
+      
+       &:before{
+         counter-increment: section;
+         content: counters(section,".") " ";
+         background: $color__red;
+         color: $color__white;
+         border-radius: 50%;
+         vertical-align: middle;
+         width: 30px;
+         height: 30px;
+         display: inline-block;
+         text-align: center;
+         line-height: 30px;
+         margin-right: 10px;
+       } 
+    }
+  }
+  
+  //unordered lists
+  ul{
+    list-style-type: none;
+    margin: 0% 0% 1.5em 0%;
+    padding: 0%;
+    
+    li{
+       margin-bottom: 10px;
+       
+       &:before{
+         font-family: FontAwesome;
+         content: '\f105';
+         background: $color__orange;
+         color: $color__white;
+         border-radius: 50%;
+         vertical-align: middle;
+         width: 30px;
+         height: 30px;
+         display: inline-block;
+         text-align: center;
+         line-height: 30px;
+         margin-right: 10px;
+         
+       }
+    }
+    
+  }
+  
+}
+
+

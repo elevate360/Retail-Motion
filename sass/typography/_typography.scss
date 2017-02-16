@@ -1,0 +1,15 @@
+body,
+button,
+input,
+select,
+textarea {
+	color: $color__slate;
+	font-family: $font__main;
+	font-weight: 400;
+	@include font-size(1);
+	line-height: $font__line-height-body;
+}
+
+@import "headings";
+
+@import "copy";

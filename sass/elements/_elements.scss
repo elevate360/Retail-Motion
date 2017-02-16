@@ -1,0 +1,81 @@
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after { 
+	box-sizing: inherit;
+}
+
+body {
+	background: $color__background-body; 
+}
+
+blockquote, q {
+	color: $color__orange;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	border-top: solid 1px $color__red;
+	border-bottom: solid 1px $color__red;
+	margin: 0px 0px 1.5em 0px;
+	font-style: italic;
+	font-size: 1.35em;
+	
+	&:before,
+	&:after {
+		font-family: FontAwesome;
+		font-size: 1em;
+		display: inline-block;
+		opacity: 0.6;
+	}
+	&:before{
+	  content: '\f10d';
+	  margin-right: 10px;
+	}
+	&:after{
+	  content: '\f10e';
+	  margin-left: 10px;
+	}
+	p{
+	  display: inline;
+	}
+}
+
+hr {
+	background-color: $color__background-hr;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+	
+	&.orange{
+	  background-color: $color__orange;
+	}
+	&.red{
+	  background-color: $color__red;
+	}
+	&.yellow{
+	  background-color: $color__yellow;
+	}
+	
+	&.fat{
+	  height: 5px;
+	}
+	&.medium{
+	  height: 2.5px;
+	}
+	
+	
+}
+
+img {
+	height: auto; /* Make sure images are scaled correctly. */
+	max-width: 100%; /* Adhere to container width. */
+}
+
+
+@import "lists";
+
+@import "tables";

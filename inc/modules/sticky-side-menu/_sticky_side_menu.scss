@@ -1,0 +1,202 @@
+/*
+ * Sticky side menu styling
+ * Styling for the side menu displayed on the right hand side of the screen, provides quick links to resources. 
+ */
+
+
+.sticky-side-menu{
+  position: fixed;
+  width: 100%;
+  bottom: 0%;
+  z-index: 1501;
+  transition: all 250ms ease-out;
+  transform: translate3d(0px, 100px, 1px);
+  
+  //Active toggled out state
+  &.active{
+    transform: translate3d(0px, 0px, 1px);
+    
+  }
+  
+  //menu toggle
+  .menu-toggle{
+    position: absolute;
+    top: 0%;
+    background: red;
+    background: $color__orange;
+    cursor: pointer;
+    text-align: center;
+    width: 60px;
+    height: 35px;
+    top: -35px;
+    left: 50%;
+    left: calc(50% - 30px);
+    border-radius: 8px 8px 0% 0%;
+   
+    
+    .icon{
+      color: $color__white;
+      font-size: 2rem;
+      line-height: 50px;
+      transform: rotate(-90deg);
+    }
+    
+    //active menu
+    &.active .icon{
+      transform: rotate(-270deg);
+    }
+    
+  }
+  
+  .fragment{
+    background: $color__yellow;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    width: 33.33%;
+    float: left;
+    -webkit-transition: all 250ms ease-in;
+    -moz-transition: all 250ms ease-in;
+    -o-transition: all 250ms ease-in;
+    transition: all 250ms ease-in;
+    height: 100px;
+    
+    a{
+      color: $color__white;
+    }
+    
+    .title{
+      display: none;
+    }
+    .background-wrap{
+      overflow: hidden; 
+      height: 100%;
+      width: 100%;
+    }
+    .background-image{
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      -webkit-transition: all 300ms ease-out;
+      -moz-transition: all 300ms ease-out;
+      -o-transition: all 300ms ease-out;
+      transition: all 300ms ease-out;
+      -webkit-transform: scale(1.0);
+      -moz-transform: scale(1.0);
+      -ms-transform: scale(1.0);
+      transform: scale(1.0);
+    }
+    
+    //hover sates
+    &:active,
+    &:hover{
+      background-color: $color__orange;
+    }
+    
+    &:active .background-image,
+    &:hover .background-image{
+      -webkit-transform: scale(1.15);
+      -moz-transform: scale(1.15);
+      -ms-transform: scale(1.15);
+      transform: scale(1.15);
+    }
+    
+  }
+  
+ 
+  
+  //larger styles (menu on the right)
+  @include breakpoint("medium"){
+    
+    width: 100px;
+    top: 25%;
+    right: -100px;
+    bottom: auto;
+    -ms-transform: translateX(0px, 0px);
+    -o-transform: translateX(0px, 0px);
+    -webkit-transform: translate3d(0px, 0px, 1px);
+    -moz-transform: translate3d(0px, 0px, 1px);
+    transform: translateX(0px, 0px);
+    transform: translate3d(0px, 0px, 1px);
+    
+    .menu-toggle{
+      top: 50%;
+      top: calc(50% - 30px);
+      left: -35px;
+      width: 35px;
+      height:60px;
+      border-radius: 20px 0px 0px 20px;
+      
+      .icon{
+        transform: rotate(0deg);
+        line-height: 60px;
+      }
+      
+      &.active{
+         .icon{
+             transform: rotate(-180deg)
+         }
+         
+      }
+    }
+    
+    .fragment{
+      height: 0px;
+      width: 100%;
+      height: auto;
+      
+      //first fragment
+      &:first-of-type{
+        border-top-left-radius: 10px;
+      }
+      
+      //Last fragment
+      &:last-of-type{
+        border-bottom: 0px;
+        border-bottom-left-radius: 10px;
+      }
+      
+      .title{
+        display: block;
+      }
+      
+      .background-wrap{
+        height: 75px;
+        width: 100%;
+      }
+      
+    }
+    
+     //Active state for the menu, slide left
+    &.active{
+      -ms-transform: translateX(-100px, 0px);
+      -o-transform: translateX(-100px, 0px);
+      -webkit-transform: translate3d(-100px, 0px, 1px);
+      -moz-transform: translate3d(-100px, 0px, 1px);
+      transform: translateX(-100px, 0px);
+      transform: translate3d(-100px, 0px, 1px);
+    }
+   
+  
+  }
+  
+}
+
+/*Sticky side menu background*/
+.sticky-side-menu-background{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: $color__slate_transparent;
+  z-index: -1;
+  opacity: 0;
+  transition: all 300ms linear;
+  
+  &.active{
+     z-index: 1500;
+     opacity: 1;
+  }  
+}
+

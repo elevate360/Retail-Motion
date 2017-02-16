@@ -1,0 +1,17 @@
+/*
+ * Master file that combines the styles for all modules. 
+ * This file is included in the main stylesheet
+ */
+
+
+@import "universal/css/universal_styles";
+@import "services/services";
+@import "blogs/blogs";
+@import "timeline/timeline";
+@import "portfolios/portfolios";
+@import "call_to_action/call_to_action";
+@import "clients/clients";
+@import "testimonials/testimonials";
+@import "data_summary/data_summary";
+@import "sticky-side-menu/sticky_side_menu";
+@import "hero_sections/hero_sections";

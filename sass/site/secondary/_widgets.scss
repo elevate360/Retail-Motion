@@ -1,0 +1,87 @@
+
+//sidebar widgets
+.widget {
+	margin: 0 0 1.5em;
+	@include box-shadow();
+	padding: 15px;
+
+	/* Make sure select elements fit in widgets. */
+	select {
+		max-width: 100%;
+	}
+}
+
+
+//Social media custom menu widget
+.menu-social-media-menu-container{
+  
+  ul{
+    list-style-type: none;
+    padding: 0px;
+  }
+  li {
+   margin-bottom: 10px;
+  }
+  
+  li{
+    
+    a:before{
+      content: '';
+      position: relative;
+      min-width: 40px;
+      font-size: 1.7rem;
+      font-family: 'fontawesome';
+      width: 40px;
+      height: 40px;
+      position: relative;
+      display: inline-block;
+      text-align: center;
+      background: #eee;
+      border-radius: 5px;
+      color: #fff;
+      line-height: 40px;
+      margin-right: 10px;
+      vertical-align: middle;
+      transform: scale(1.0);
+      transition: all 200ms ease-in;
+      
+      
+    }
+   
+    a:hover:before,
+    a:active:before{
+      transform: scale(1.1);
+    }
+    
+    &.facebook a:before{
+      content: "\f09a";
+      background-color: #3b5998;
+    }
+    &.instagram a:before{
+      content: "\f16d";
+      background-color: #125688;
+    }
+    &.twitter a:before{
+      content: "\f099";
+      background-color: #55acee;
+    }
+    &.youtube a:before{
+      content: "\f167";
+      background-color: #bb0000;
+    }
+    &.googleplus a:before{
+      content: "\f0d5";
+      background-color: #dd4b39;
+    }
+    &.linkedin a:before{
+      content: "\f0e1";
+      background-color: #007bb5;
+    }
+    &.ourblog a:before{
+      content: "\f086";
+      background: orange;
+    }
+  
+    
+  }
+}
